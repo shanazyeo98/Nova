@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6E608E582EC87D39009B8E81 /* Gifu in Frameworks */ = {isa = PBXBuildFile; productRef = 6E608E572EC87D39009B8E81 /* Gifu */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6E608E3E2EC85B8B009B8E81 /* Nova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E608E582EC87D39009B8E81 /* Gifu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = Nova;
 			packageProductDependencies = (
+				6E608E572EC87D39009B8E81 /* Gifu */,
 			);
 			productName = Nova;
 			productReference = 6E608E3E2EC85B8B009B8E81 /* Nova.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 6E608E352EC85B8B009B8E81;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6E608E562EC87D39009B8E81 /* XCRemoteSwiftPackageReference "Gifu" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6E608E3F2EC85B8B009B8E81 /* Products */;
 			projectDirPath = "";
@@ -337,6 +346,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E608E562EC87D39009B8E81 /* XCRemoteSwiftPackageReference "Gifu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kaishin/Gifu";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E608E572EC87D39009B8E81 /* Gifu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E608E562EC87D39009B8E81 /* XCRemoteSwiftPackageReference "Gifu" */;
+			productName = Gifu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E608E362EC85B8B009B8E81 /* Project object */;
 }
