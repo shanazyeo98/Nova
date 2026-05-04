@@ -67,12 +67,27 @@ struct StarNode: View {
                     }
                 }
             }
-            .onTapGesture { showDetail = true }
-            .sheet(isPresented: $showDetail) {
-                WinDetailView(win: win)
-                    .presentationDetents([.medium])
-                    .presentationDragIndicator(.visible)
-            }
+            .onTapGesture { withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                showDetail = true
+            } }
+        
+        if showDetail {
+            WinDetailView(win: win, onClose: {
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.85)) {
+                    showDetail = false
+                }
+            })
+//                .frame(maxWidth: 360, maxHeight: 460)
+                .background(Color(red: 0.06, green: 0.04, blue: 0.18))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.white.opacity(0.18), lineWidth: 1)
+                )
+                .shadow(color: .black.opacity(0.5), radius: 30, x: 0, y: 10)
+                .padding(.horizontal, 24)
+                .transition(.scale(scale: 0.92).combined(with: .opacity))
+        }
     }
 
     private func startTwinkle() {
